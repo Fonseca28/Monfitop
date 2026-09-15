@@ -1,6 +1,4 @@
-/* ==========================================================================
-   SECCIÓN GALERÍA & CARRUSEL
-   ========================================================================== */
+
 .gallery-container {
     max-width: 1000px;
     margin: 40px auto;
@@ -36,7 +34,6 @@
     background-color: #000000;
 }
 
-/* Pista deslizante del carrusel */
 .carrusel-track {
     display: flex;
     width: 100%;
@@ -51,7 +48,6 @@
     display: block;
 }
 
-/* Botones / Flechas */
 .flecha {
     position: absolute;
     top: 50%;
@@ -84,7 +80,6 @@
     right: 15px;
 }
 
-/* Responsive para dispositivos móviles */
 @media (max-width: 768px) {
     .carrusel {
         height: 320px;

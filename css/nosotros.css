@@ -1,13 +1,10 @@
-/* ==========================================================================
-   SECCIÓN NOSOTROS (HISTORIA, MISIÓN, VISIÓN Y VALORES)
-   ========================================================================== */
+
 .about-container {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Tarjeta de Historia */
 .history-card {
     background-color: #FFF0F9;
     padding: 35px 40px;
@@ -24,7 +21,6 @@
     margin-top: 15px;
 }
 
-/* Cuadrícula Misión y Visión (2 Columnas) */
 .mv-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -61,7 +57,6 @@
     font-size: 0.98rem;
 }
 
-/* Sección de Valores */
 .values-section {
     margin-top: 20px;
 }

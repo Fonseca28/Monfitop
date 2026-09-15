@@ -38,7 +38,6 @@
         </nav>
     </header>
 
-    <!-- Contenido Principal de Contacto -->
     <main class="contact-container">
         <div class="contact-header">
             <h2 class="section-title">Ponte en contacto con nosotros</h2>
@@ -47,7 +46,7 @@
 
         <div class="contact-wrapper">
             
-            <!-- Columna 1: Información de contacto -->
+
             <aside class="contact-info-card">
                 <h3>Información de MonfiTop</h3>
                 <p class="info-intro">Estamos listos para guiarte en tu camino musical.</p>
@@ -73,12 +72,16 @@
                 </div>
             </aside>
 
-            <!-- Columna 2: Formulario -->
             <section class="contact-form-card">
                 <form id="formulario">
                     <div class="form-group">
                         <label for="nombre">Nombre Completo</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="number" id="telefono" name="telefono" placeholder="3008080800" required>
                     </div>
 
                     <div class="form-group">
@@ -90,7 +93,7 @@
                         <label for="message">Mensaje</label>
                         <textarea id="message" name="message" rows="5" placeholder="¿En qué curso estás interesado o cómo podemos ayudarte?" required></textarea>
                     </div>
-
+                    <button type="reset" class="btn-reset">Limpiar</button>
                     <button type="submit" class="btn-submit">Enviar Mensaje</button>
                     <p id="estado"></p>
                 </form>
@@ -99,7 +102,6 @@
         </div>
     </main>
 
-    <!-- Pie de Página -->
     <footer>
         <div class="footer-info">
             <p class="brand">2026 MonfiTop</p>

@@ -1,6 +1,4 @@
-/* ==========================================================================
-   SECCIÓN DE CONTACTO
-   ========================================================================== */
+
 .contact-container {
     max-width: 1100px;
     margin: 40px auto;
@@ -17,7 +15,6 @@
     font-size: 1rem;
 }
 
-/* Disposición de dos columnas */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -25,7 +22,6 @@
     align-items: start;
 }
 
-/* Tarjeta lateral de datos de contacto */
 .contact-info-card {
     background-color: #E0CEAA;
     padding: 35px 30px;
@@ -61,7 +57,6 @@
     font-size: 0.95rem;
 }
 
-/* Tarjeta del formulario */
 .contact-form-card {
     background-color: #FFF0F9;
     padding: 35px 30px;
@@ -107,37 +102,59 @@
     resize: vertical;
 }
 
-/* Botón de envío */
+/* ==========================================================================
+   BOTONES DEL FORMULARIO DE CONTACTO
+   ========================================================================== */
+.form-buttons {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* "Limpiar" más pequeño, "Enviar" más ancho */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Estilo base para ambos botones */
+.btn-reset,
 .btn-submit {
-    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botón secundario: Limpiar */
+.btn-reset {
+    background-color: transparent;
+    color: #333333;
+    border: 1.5px solid #C7A167;
+}
+
+.btn-reset:hover {
+    background-color: rgba(199, 161, 103, 0.2);
+    color: #000000;
+}
+
+/* Botón principal: Enviar Mensaje */
+.btn-submit {
     background-color: #C7A167;
     color: #FFF0F9;
     border: none;
-    padding: 14px;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-submit:hover {
     background-color: #000000;
     transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-#estado {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-/* Responsivo para celulares */
-@media (max-width: 768px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
+/* Responsivo para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .form-buttons {
+        grid-template-columns: 1fr; /* Se apilan en vertical en celulares */
     }
 }
+
 
 
