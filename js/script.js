@@ -11,7 +11,8 @@
     const datos = {
       nombre: document.getElementById("nombre").value,
       email: document.getElementById("email").value,
-      message: document.getElementById("message").value
+      message: document.getElementById("message").value,
+      telefono: document.getElementById("telefono").value
     };
  
     estado.textContent = "Enviando...";
