@@ -1,0 +1,115 @@
+
+/* ==========================================================================
+   SECCIÓN DE SERVICIOS (GRID & CARDS)
+   ========================================================================== */
+.services-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.services-header {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: 700;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Línea magenta/dorada decorativa al lado del título (como en la imagen) */
+.section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 5px;
+    background-color: #C7A167;
+    border-radius: 4px;
+}
+
+/* Grilla adaptable de 4 columnas */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px 20px;
+}
+
+/* Tarjeta individual */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Imagen con esquinas redondeadas */
+.card-image {
+    width: 100%;
+    height: 170px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.05rem;
+    color: #000000;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #333333;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.card-content .price {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #C7A167;
+    margin-bottom: 15px;
+}
+
+/* Botón estilo píldora como el de la referencia */
+.btn-card {
+    display: block;
+    text-align: center;
+    background-color: #C7A167;
+    color: #FFF0F9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 10px 0;
+    border-radius: 25px;
+    margin-top: auto;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-card:hover {
+    background-color: #000000;
+}

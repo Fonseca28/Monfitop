@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Equipo de Trabajo | MonfiTop Studio</title>
     <link rel="stylesheet" href="../css/ estilos.css">
 </head>
-
 <body>
 
-
-<header>
-       <div class="logo-container">
+    <header>
+        <div class="logo-container">
             <img src="../img/Logo.png" alt="Logo MonfiTop" class="img-logo">
             <h1>Personal</h1>
         </div>
 
         <nav id="menu"> 
-              <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../galeria.html">Galería</a></li>
                 <li><a href="../servicios.html">Servicios</a></li>
                 <li class="dropdown">
-                    <a href="../nosotros/nosotros.html" class="dropdown-btn">Nosotros</a>
+                    <a href="../nosotros/nosotros.html" class="active dropdown-btn">Nosotros</a>
                     <ul class="submenu">
                         <li><a href="../nosotros/personal.html">Equipo de trabajo</a></li>
                     </ul>
@@ -38,34 +36,109 @@
             </div>
         </nav>
     </header>
-<section>
 
-        <article>
-            <h2>Información del Equipo de Trabajo</h2>
-
-            <p>En Monfi Top Studio, nuestro equipo está conformado por músicos activos y educadores apasionados que combinan la experiencia en escenario con la pedagogía musical:</p>
-            <p>Director Musical / Lead Instructor: Músico profesional encargado de la dirección pedagógica de la academia. Diseña los programas de estudio, evalúa los avances de los estudiantes y asegura que cada persona reciba una ruta de aprendizaje alineada a sus objetivos.</p>
-            <p>Instructor de Guitarra & Bajo: Especialista en ejecución de guitarra acústica, eléctrica y bajo. Su enfoque combina la técnica de dedos y púa, agilidad, lectura de cifrados, armonía aplicada y desenvolverse con soltura en diversos géneros musicales.</p>
-            <p>Instructora de Técnica Vocal & Coach Escénico: Cantante profesional enfocada en el desarrollo de la salud vocal, control del aire, resonancia, afinación y expresión corporal. Acompaña a los estudiantes a ganar confianza y manejo de escenario.</p>
-            <p>Instructor de Piano & Teoría Creativa: Pianista de formación clásica y popular. Enseña desde la independencia de manos y lectura musical hasta el acompañamiento armónico, arreglos e improvisación para estudiantes que desean crear o acompañar.</p>
-            <p>Instructor de Batería & Secciones Rítmicas: Baterista especializado en métrica, tiempo interno, independencia de extremidades y dinámicas de golpeo. Prepara a los alumnos para ser la columna vertebral de cualquier agrupación.</p>
-        </article>
-        <div id="Fundador1">
-            <img src="" alt="Fundador1">
+    <main class="team-container">
+        
+        <div class="team-intro">
+            <h2 class="section-title">Equipo de Trabajo & Cuerpo Docente</h2>
+            <p class="intro-lead">
+                En Monfi Top Studio, nuestro equipo está conformado por músicos activos y educadores apasionados 
+                que combinan la excelencia técnica en escenario con una solida pedagogía musical.
+            </p>
         </div>
-        <div id="Fundador2">
-            <img src="" alt="Fundador2">
+
+        <section class="founders-section">
+            <h3 class="subsection-title">Dirección & Fundadores</h3>
+            
+            <div class="founders-grid">
+                <article class="founder-card" id="Fundador1">
+                    <div class="founder-img-wrapper">
+                        <img src="../img/nicoss.jpeg" alt="Nicolas Montoya Castro - Co-Fundador">
+                    </div>
+                    <div class="founder-info">
+                        <h4>Nicolas Montoya Castro</h4>
+                        <span class="role">Co-Fundador & Director Creativo</span>
+                        <p>Líder estratégico enfocado en la innovación pedagógica y la proyección artística de la academia.</p>
+                    </div>
+                </article>
+
+                <article class="founder-card" id="Fundador2">
+                    <div class="founder-img-wrapper">
+                        <img src="../img/fonseca.jpeg" alt="Santiago Fonseca Ramirez - Co-Fundador">
+                    </div>
+                    <div class="founder-info">
+                        <h4>Santiago Fonseca Ramirez</h4>
+                        <span class="role">Co-Fundador & Director Operativo</span>
+                        <p>Encargado de la gestión de programas educativos y el estándar de excelencia del cuerpo docente.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="instructors-section">
+            <h3 class="subsection-title">Instructores Especializados</h3>
+
+            <div class="instructors-grid">
+                
+                <article class="staff-card">
+                    <div class="staff-header">
+                        <h4>Director Musical</h4>
+                        <span class="badge">Lead Instructor</span>
+                    </div>
+                    <p>Músico profesional encargado de la dirección pedagógica. Diseña los programas de estudio, evalúa los avances y asegura una ruta alineada a los objetivos de cada estudiante.</p>
+                </article>
+
+                <article class="staff-card">
+                    <div class="staff-header">
+                        <h4>Instructor de Guitarra & Bajo</h4>
+                        <span class="badge">Cuerdas</span>
+                    </div>
+                    <p>Especialista en guitarra acústica, eléctrica y bajo. Combina técnica de dedos y púa, agilidad, lectura de cifrados, armonía aplicada y versatilidad de géneros.</p>
+                </article>
+
+                <article class="staff-card">
+                    <div class="staff-header">
+                        <h4>Instructora de Técnica Vocal</h4>
+                        <span class="badge">Coach Escénico</span>
+                    </div>
+                    <p>Cantante profesional enfocada en la salud vocal, control del aire, resonancia y afinación. Acompaña al estudiante a ganar confianza y manejo de escenario.</p>
+                </article>
+
+                <article class="staff-card">
+                    <div class="staff-header">
+                        <h4>Instructor de Piano</h4>
+                        <span class="badge">Teoría Creativa</span>
+                    </div>
+                    <p>Pianista de formación clásica y popular. Enseña desde independencia de manos y lectura musical hasta acompañamiento armónico, arreglos e improvisación.</p>
+                </article>
+
+                <article class="staff-card">
+                    <div class="staff-header">
+                        <h4>Instructor de Batería</h4>
+                        <span class="badge">Secciones Rítmicas</span>
+                    </div>
+                    <p>Baterista especializado en métrica, tiempo interno, independencia de extremidades y dinámicas de golpeo. Prepara a los alumnos para liderar el ritmo.</p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p class="brand">2026 MonfiTop</p>
+            <p class="location">Medellín, Colombia</p>
         </div>
-</section>
 
+        <div class="footer-cta">
+            <a href="../contacto.html" class="btn-secondary">Contáctanos</a>
+        </div>
 
+        <div class="footer-credits">
+            <p>Autores: Nicolas Montoya Castro y Santiago Fonseca Ramirez</p>
+        </div>
+    </footer>
 
-
-
-
-<footer>
-
-</footer>
 </body>
-
 </html>
