@@ -1,219 +1,269 @@
-/* ==========================================
-   VARIABLES Y ESTILOS GENERALES
-========================================== */
-:root {
-    --crema-dorado: #E0CEAA;
-    --crema-suave: #F5F2EA;
-    --dorado-camello: #C7A167;
-    --blanco-roto: #FFF0F9;
-    --nero-puro: #000000;
-    --gris-oscuro: #333333;
-}
-
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--crema-suave);
-    color: var(--gris-oscuro);
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F5F2EA;
+    color: #333333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
 
-/* ==========================================
-   HEADER Y NAVEGACIÓN
-========================================== */
+/* ==========================================================================
+   HEADER & NAVEGACIÓN
+   ========================================================================== */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--crema-dorado);
+    background-color: #E0CEAA;
     height: 80px;
     padding: 0 40px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 100;
 }
 
-header img {
-    width: 50px;
-    height: 50px;
+/* Contenedor del logo y título */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Base para permitir que la imagen crezca libremente */
+}
+
+/* Estilo exclusivo para la imagen del logo */
+.img-logo {
+    width: 100px; /* Tamaño base más amplio */
+    height: 100px;
     object-fit: contain;
+    
+    /* Permite aumentar el tamaño del icono sin agrandar el header ni desacomodar nada */
+    transform: scale(1.4); 
+    transform-origin: center left; /* Mantiene la alineación pegada a la izquierda */
+    margin-right: 15px; /* Espacio de seguridad para no tapar el texto MonfiTop */
 }
 
 header h1 {
-    margin: 0 20px 0 10px;
     font-size: 1.6rem;
-    color: var(--nero-puro);
+    color: #000000;
+    font-weight: 700;
 }
 
-#menu ul {
+#menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links {
     display: flex;
     align-items: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
     gap: 15px;
 }
 
-#menu ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-#menu a {
+.nav-links a {
     text-decoration: none;
-    color: var(--gris-oscuro);
+    color: #333333;
     font-weight: 600;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 4px;
-    transition: all 0.2s ease;
-}
-
-#menu a:hover {
-    color: var(--nero-puro);
-    background-color: rgba(199, 161, 103, 0.2);
-}
-
-/* Formulario de búsqueda */
-#buscador form {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: var(--gris-oscuro);
-}
-
-#buscador input[type="text"] {
-    border: 1px solid var(--dorado-camello);
-    border-radius: 15px;
-    padding: 5px 12px;
-    outline: none;
-    background-color: var(--blanco-roto);
-}
-
-/* Menú Desplegable */
-#menu ol ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: var(--blanco-roto);
-    padding: 10px 0;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-#menu ol:hover ul {
+    transition: all 0.3s ease;
     display: block;
 }
 
-/* ==========================================
-   SECCIÓN PRINCIPAL (BANNER Y CONTENIDO)
-========================================== */
-section {
+.nav-links a:hover {
+    color: #000000;
+    background-color: rgba(199, 161, 103, 0.3);
+}
+
+/* Menu desplegable de "Nosotros" */
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFF0F9;
+    list-style: none;
+    min-width: 180px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+    border: 1px solid #C7A167;
+}
+
+.submenu li a {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.submenu li a:hover {
+    background-color: #C7A167;
+    color: #FFF0F9;
+}
+
+/* Despliegue en Hover y Focus */
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+    display: block;
+}
+
+/* Buscador */
+#buscador input[type="text"] {
+    border: 1px solid #C7A167;
+    border-radius: 20px;
+    padding: 6px 14px;
+    outline: none;
+    background-color: #FFF0F9;
+    color: #333333;
+    transition: border-color 0.3s ease;
+}
+
+#buscador input[type="text"]:focus {
+    border-color: #000000;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==========================================================================
+   HERO & SECCIÓN PRINCIPAL
+   ========================================================================== */
+.hero-banner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     width: 100%;
 }
 
-/* Ajuste del Banner */
-section img[src*="banner"] {
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-wrapper img {
     width: 100%;
     max-height: 480px;
     object-fit: cover;
     display: block;
 }
 
-/* Botón "Inicia tu viaje" */
-#accion {
-    background-color: var(--dorado-camello);
-    border: none;
-    border-radius: 25px;
-    padding: 0;
-    margin: -25px 0 30px 0;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+.hero-overlay {
+    position: absolute;
+    bottom: -25px;
 }
 
-#accion a {
+.btn-primary {
     display: inline-block;
-    padding: 14px 32px;
-    color: var(--blanco-roto);
+    background-color: #C7A167;
+    color: #FFF0F9;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
+    padding: 14px 32px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-#accion:hover {
-    background-color: var(--nero-puro);
+.btn-primary:hover {
+    background-color: #000000;
     transform: translateY(-3px);
 }
 
-/* Texto explicativo */
-section p {
+.intro-card {
     max-width: 800px;
-    line-height: 1.7;
-    font-size: 1.1rem;
-    color: var(--gris-oscuro);
-    padding: 0 20px;
-    margin-bottom: 40px;
+    margin: 50px 20px 40px 20px;
+    padding: 30px;
+    background-color: #FFF0F9;
+    border-radius: 12px;
+    border-left: 5px solid #C7A167;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
 }
 
-/* ==========================================
+.intro-card h2 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.intro-card p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #333333;
+}
+
+/* ==========================================================================
    FOOTER
-========================================== */
+   ========================================================================== */
 footer {
-    background-color: var(--crema-dorado);
-    color: var(--nero-puro);
-    padding: 35px 40px;
-    margin-top: 40px;
+    background-color: #E0CEAA;
+    color: #000000;
+    padding: 30px 40px;
+    margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    border-top: 2px solid var(--dorado-camello);
+    border-top: 3px solid #C7A167;
 }
 
-footer p:first-child {
+.footer-info .brand {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--nero-puro);
-    margin: 0;
 }
 
-footer a {
+.btn-secondary {
     display: inline-block;
     padding: 10px 24px;
-    background-color: var(--blanco-roto);
-    color: var(--nero-puro);
+    background-color: #FFF0F9;
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
     border-radius: 20px;
     transition: all 0.3s ease;
-    border: 1px solid var(--dorado-camello);
+    border: 1px solid #C7A167;
 }
 
-footer a:hover {
-    background-color: var(--dorado-camello);
-    color: var(--blanco-roto);
+.btn-secondary:hover {
+    background-color: #C7A167;
+    color: #FFF0F9;
     transform: translateY(-2px);
 }
 
-footer p:nth-child(3),
-footer p:nth-child(4) {
-    font-size: 0.85rem;
-    color: var(--gris-oscuro);
-    margin: 2px 0;
+.footer-credits {
     width: 100%;
     text-align: right;
+    font-size: 0.85rem;
+    color: #333333;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 10px;
 }
 
-/* Responsive */
+/* ==========================================================================
+   RESPONSIVE (MÓVIL)
+   ========================================================================== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -222,14 +272,292 @@ footer p:nth-child(4) {
         gap: 15px;
     }
 
+    #menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+        padding-left: 20px;
+    }
+
     footer {
         flex-direction: column;
         text-align: center;
     }
 
-    footer p:nth-child(3),
-    footer p:nth-child(4) {
+    .footer-credits {
         text-align: center;
     }
 }
 
+
+
+/* ==========================================================================
+   SECCIÓN DE SERVICIOS (GRID & CARDS)
+   ========================================================================== */
+.services-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.services-header {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: 700;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Línea magenta/dorada decorativa al lado del título (como en la imagen) */
+.section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 5px;
+    background-color: #C7A167;
+    border-radius: 4px;
+}
+
+/* Grilla adaptable de 4 columnas */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px 20px;
+}
+
+/* Tarjeta individual */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Imagen con esquinas redondeadas */
+.card-image {
+    width: 100%;
+    height: 170px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.05rem;
+    color: #000000;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #333333;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.card-content .price {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #C7A167;
+    margin-bottom: 15px;
+}
+
+/* Botón estilo píldora como el de la referencia */
+.btn-card {
+    display: block;
+    text-align: center;
+    background-color: #C7A167;
+    color: #FFF0F9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 10px 0;
+    border-radius: 25px;
+    margin-top: auto;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-card:hover {
+    background-color: #000000;
+}
+
+
+
+/* ==========================================================================
+   SECCIÓN DE CONTACTO
+   ========================================================================== */
+.contact-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contact-header {
+    margin-bottom: 35px;
+}
+
+.contact-subtitle {
+    margin-top: 10px;
+    color: #333333;
+    font-size: 1rem;
+}
+
+/* Disposición de dos columnas */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Tarjeta lateral de datos de contacto */
+.contact-info-card {
+    background-color: #E0CEAA;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-card h3 {
+    font-size: 1.4rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.info-intro {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    color: #333333;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item strong {
+    display: block;
+    color: #000000;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.info-item p {
+    color: #333333;
+    font-size: 0.95rem;
+}
+
+/* Tarjeta del formulario */
+.contact-form-card {
+    background-color: #FFF0F9;
+    padding: 35px 30px;
+    border-radius: 16px;
+    border: 1px solid #C7A167;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #C7A167;
+    border-radius: 8px;
+    background-color: #F5F2EA;
+    color: #333333;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(199, 161, 103, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Botón de envío */
+.btn-submit {
+    width: 100%;
+    background-color: #C7A167;
+    color: #FFF0F9;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+}
+
+#estado {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

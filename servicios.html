@@ -1,95 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Servicios | MonfiTop Studio</title>
     <link rel="stylesheet" href="css/ estilos.css">
 </head>
-
 <body>
 
+    <header>
+        <div class="logo-container">
+            <img src="img/Logo.png" alt="Logo MonfiTop" class="img-logo">
+            <h1>MonfiTop</h1>
+        </div>
 
-<header>
-    <img src="img/Logo.png">
-    <h1>Servicios</h1>
-
-    <nav id="menu"> 
-        <ul>
-            <ol ><a href="../index.html">Inicio</a></ol>
-            <ol ><a href="../galeria.html">Galería</a></ol>
-            <ol ><a href="../servicios.html">Servicios</a></ol>
-            <ol ><a href="../nosotros/nosotros.html">Nosotros</a></ol>
-            <ul>
-                <ol><a href="../nosotros/personal.html">Equipo de trabajo</a></ol>
-
+        <nav id="menu"> 
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li class="dropdown">
+                    <a href="nosotros/nosotros.html" class="dropdown-btn">Nosotros</a>
+                    <ul class="submenu">
+                        <li><a href="nosotros/personal.html">Equipo de trabajo</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <ol ><a href="../contacto.html">Contacto</a></ol>
-            <ol id="buscador">
-                <form action="https://google.com.co" method="post">
-                    Buscar &nbsp; <input name="busqueda" type="text">
+
+            <div id="buscador">
+                <form action="https://google.com.co" method="get">
+                    <label for="input-busqueda" class="sr-only">Buscar</label>
+                    <input id="input-busqueda" name="busqueda" type="text" placeholder="Buscar...">
                 </form>
-            </ol>
-        </ul>
-</nav>
+            </div>
+        </nav>
+    </header>
 
-</header>
+    <!-- Sección de Servicios -->
+    <main class="services-container">
+        <div class="services-header">
+            <h2 class="section-title">Cursos de música</h2>
+        </div>
 
-<h1>Nuestros Servicios</h1>
-<div>
+        <section class="services-grid">
+            
+            <article class="service-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600" alt="Curso de Piano">
+                </div>
+                <div class="card-content">
+                    <h3>Piano Principal</h3>
+                    <p>Clases individuales para principiantes y nivel intermedio.</p>
+                    <span class="price">$120.000 / mes</span>
+                    <a href="contacto.html" class="btn-card">Inscribirse</a>
+                </div>
+            </article>
 
-  <div>
-    <img src="https://via.placeholder.com/250x150" alt="Piano">
-    <h3>Piano</h3>
-    <p>Clases de piano para principiantes y nivel intermedio.</p>
-    <p>$120.000 / mes</p>
-    <button>Ver más</button>
-  </div>
+            <article class="service-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600" alt="Curso de Guitarra">
+                </div>
+                <div class="card-content">
+                    <h3>Guitarra Acústica</h3>
+                    <p>Aprende acordes, ritmos y canciones desde cero.</p>
+                    <span class="price">$110.000 / mes</span>
+                    <a href="contacto.html" class="btn-card">Inscribirse</a>
+                </div>
+            </article>
 
-  <div>
-    <img src="https://via.placeholder.com/250x150" alt="Guitarra">
-    <h3>Guitarra</h3>
-    <p>Aprende acordes y canciones desde cero.</p>
-    <p>$110.000 / mes</p>
-    <button>Ver más</button>
-  </div>
+            <article class="service-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=600" alt="Curso de Canto">
+                </div>
+                <div class="card-content">
+                    <h3>Técnica Vocal y Canto</h3>
+                    <p>Aprende respiración y afinación para todos los niveles.</p>
+                    <span class="price">$130.000 / mes</span>
+                    <a href="contacto.html" class="btn-card">Inscribirse</a>
+                </div>
+            </article>
 
-  <div>
-    <img src="https://via.placeholder.com/250x150" alt="Canto">
-    <h3>Canto</h3>
-    <p>Técnica vocal y respiración para todos los niveles.</p>
-    <p>$130.000 / mes</p>
-    <button>Ver más</button>
-  </div>
+            <article class="service-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=600" alt="Curso de Violín">
+                </div>
+                <div class="card-content">
+                    <h3>Violín Clásico</h3>
+                    <p>Postura, arco y lectura musical desde el inicio.</p>
+                    <span class="price">$125.000 / mes</span>
+                    <a href="contacto.html" class="btn-card">Inscribirse</a>
+                </div>
+            </article>
 
-  <div>
-    <img src="https://via.placeholder.com/250x150" alt="Violín">
-    <h3>Violín</h3>
-    <p>Curso de violín para principiantes.</p>
-    <p>$125.000 / mes</p>
-    <button>Ver más</button>
-  </div>
+            <article class="service-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600" alt="Curso de Batería">
+                </div>
+                <div class="card-content">
+                    <h3>Batería y Percusión</h3>
+                    <p>Ritmo, tiempo y coordinación desde las bases.</p>
+                    <span class="price">$130.000 / mes</span>
+                    <a href="contacto.html" class="btn-card">Inscribirse</a>
+                </div>
+            </article>
 
-  <div>
-    <img src="https://via.placeholder.com/250x150" alt="Batería">
-    <h3>Batería</h3>
-    <p>Ritmo y coordinación desde las bases.</p>
-    <p>$130.000 / mes</p>
-    <button>Ver más</button>
-  </div>
+            <article class="service-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600" alt="Taller Grupal">
+                </div>
+                <div class="card-content">
+                    <h3>Taller de Producción</h3>
+                    <p>Graba y produce tu propia canción en grupo.</p>
+                    <span class="price">$95.000 / mes</span>
+                    <a href="contacto.html" class="btn-card">Inscribirse</a>
+                </div>
+            </article>
 
-  <div>
-    <img src="https://via.placeholder.com/250x150" alt="Taller grupal">
-    <h3>Taller Grupal</h3>
-    <p>Graba y produce tu propia canción en grupo.</p>
-    <p>$95.000 / mes</p>
-    <button>Ver más</button>
-  </div>
+        </section>
+    </main>
 
-</div>
-<footer>
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-info">
+            <p class="brand">2026 MonfiTop</p>
+            <p class="location">Medellín, Colombia</p>
+        </div>
 
-</footer>
+        <div class="footer-cta">
+            <a href="contacto.html" class="btn-secondary">Contáctanos</a>
+        </div>
+
+        <div class="footer-credits">
+            <p>Autores: Nicolas Montoya Castro y Santiago Fonseca Ramirez</p>
+        </div>
+    </footer>
+
 </body>
-
 </html>

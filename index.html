@@ -1,70 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MonfiTop Studio | Formación Musical</title>
     <link rel="stylesheet" href="css/ estilos.css">
 </head>
-
 <body>
 
+  
+    <header>
+       <div class="logo-container">
+            <img src="img/Logo.png" alt="Logo MonfiTop" class="img-logo">
+            <h1>MonfiTop</h1>
+        </div>
 
-<header>
-    <img src="img/Logo.png">
-    <h1>MonfiTop</h1>
-
-<nav id="menu"> 
-    <ul>
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="../galeria.html">Galería</a></li>
-        <li><a href="../servicios.html">Servicios</a></li>
-        <li>
-            <a href="../nosotros/nosotros.html">Nosotros</a>
-            <ul>
-                <li><a href="../nosotros/personal.html">Equipo de trabajo</a></li>
+        <nav id="menu"> 
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li class="dropdown">
+                    <a href="nosotros/nosotros.html" class="dropdown-btn">Nosotros</a>
+                    <ul class="submenu">
+                        <li><a href="nosotros/personal.html">Equipo de trabajo</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
-        </li>
-        <li><a href="../contacto.html">Contacto</a></li>
-        <ol id="buscador">
-    <form action="https://google.com.co" method="post">
-    Buscar &nbsp; <input name="busqueda" type="text">
-     </form>
-    </ul>
-    
-</ol>
 
-</nav>
-
-</header>
+            <div id="buscador">
+                <form action="https://google.com.co" method="get">
+                    <label for="input-busqueda" class="sr-only">Buscar</label>
+                    <input id="input-busqueda" name="busqueda" type="text" placeholder="Buscar...">
+                </form>
+            </div>
+        </nav>
+    </header>
 
 
+    <main>
+        <section class="hero-banner">
+            <div class="banner-wrapper">
+                <img src="img/banner.jpeg" alt="Banner de MonfiTop Studio">
+                <div class="hero-overlay">
+                    <a href="contacto.html" class="btn-primary">Inicia tu viaje</a>
+                </div>
+            </div>
+            
+            <article class="intro-card">
+                <h2>Lleva tu pasión al siguiente nivel</h2>
+                <p>
+                    En Monfi Top Studio llevamos tu formación musical al máximo nivel. Te ofrecemos un espacio
+                    donde no solo aprenderás a tocar un instrumento, sino que descubrirás tus verdaderos gustos
+                    musicales y fortalecerás tus habilidades. Con clases 100% personalizadas para todas las edades, 
+                    te guiamos paso a paso para que encuentres tu propia voz y potencies tu pasión por la música.
+                </p>
+            </article>
+        </section>
+    </main>
 
 
-<section>
-    <img src="img/banner.jpeg" alt="banner">
+    <footer>
+        <div class="footer-info">
+            <p class="brand">2026 MonfiTop</p>
+            <p class="location">Medellín, Colombia</p>
+        </div>
 
-    <button id="accion"><a href="contacto.html">Inicia tu viaje</a></button>
+        <div class="footer-cta">
+            <a href="contacto.html" class="btn-secondary">Contáctanos</a>
+        </div>
 
-    <p>En Monfi Top Studio llevamos tu formación musical al máximo nivel. Te ofrecemos un espacio
-        donde no solo aprenderás a tocar un instrumento, sino que descubrirás tus verdaderos gustos
-        musicales y fortalecerás tus habilidades. Con clases 100% personalizadas para todas las edades, 
-        te guiamos paso a paso para que encuentres tu propia voz y potencies tu pasión por la música.
-    </p>
-
-    
-</section>
-
-
-
-
-
-<footer>
-    <p>2026 MonfiTop </p>
-    <a href="contacto.html">Contactanos</a>
-    <p>Autores: Nicolas Montoya Castro Y Santiago Fonseca Ramirez</p>
-    <p>Medellín, Colombia</p>
-</footer>
+        <div class="footer-credits">
+            <p>Autores: Nicolas Montoya Castro y Santiago Fonseca Ramirez</p>
+        </div>
+    </footer>
 
 </body>
 </html>

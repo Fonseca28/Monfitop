@@ -11,29 +11,33 @@
 
 
 <header>
-    <img src="../img/Logo.png">
-    <h1>Nosotros</h1>
+       <div class="logo-container">
+            <img src="../img/Logo.png" alt="Logo MonfiTop" class="img-logo">
+            <h1>Nosotros</h1>
+        </div>
 
-    <nav id="menu"> 
-        <ul>
-            <ol ><a href="../index.html">Inicio</a></ol>
-            <ol ><a href="../galeria.html">Galería</a></ol>
-            <ol ><a href="../servicios.html">Servicios</a></ol>
-            <ol ><a href="../nosotros/nosotros.html">Nosotros</a></ol>
-            <ul>
-                <ol><a href="../nosotros/personal.html">Equipo de trabajo</a></ol>
-
+        <nav id="menu"> 
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../galeria.html">Galería</a></li>
+                <li><a href="../servicios.html">Servicios</a></li>
+                <li class="dropdown">
+                    <a href="../nosotros/nosotros.html" class="dropdown-btn">Nosotros</a>
+                    <ul class="submenu">
+                        <li><a href="../nosotros/personal.html">Equipo de trabajo</a></li>
+                    </ul>
+                </li>
+                <li><a href="../contacto.html">Contacto</a></li>
             </ul>
-            <ol ><a href="../contacto.html">Contacto</a></ol>
-            <ol id="buscador">
-                <form action="https://google.com.co" method="post">
-                    Buscar &nbsp; <input name="busqueda" type="text">
-                </form>
-            </ol>
-        </ul>
-</nav>
 
-</header>
+            <div id="buscador">
+                <form action="https://google.com.co" method="get">
+                    <label for="input-busqueda" class="sr-only">Buscar</label>
+                    <input id="input-busqueda" name="busqueda" type="text" placeholder="Buscar...">
+                </form>
+            </div>
+        </nav>
+    </header>
 
 
 <section>
