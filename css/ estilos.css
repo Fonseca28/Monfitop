@@ -4,7 +4,9 @@
 @import url("personal.css");
 @import url("galeria.css");
 
-
+/* ==========================================================================
+   RESET & ESTILOS BASE
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,9 +18,12 @@ body {
     color: #333333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
+/* ==========================================================================
+   HEADER & NAVEGACIÓN
+   ========================================================================== */
 header {
     display: flex;
     align-items: center;
@@ -31,20 +36,17 @@ header {
     z-index: 100;
 }
 
-/* Contenedor del logo y título */
 .logo-container {
     display: flex;
     align-items: center;
     gap: 15px;
-    position: relative; /* Base para permitir que la imagen crezca libremente */
+    position: relative;
 }
 
 .img-logo {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    
-
     transform: scale(1.4); 
     transform-origin: center left; 
     margin-right: 15px; 
@@ -144,9 +146,11 @@ header h1 {
     border: 0;
 }
 
-
 /* ==========================================================================
-   HERO & SECCIÓN PRINCIPAL
+   HERO & SECCIÓN PRINCIPAL (INICIO)
+   ========================================================================== */
+/* ==========================================================================
+   HERO BANNER Y BOTÓN DE LLAMADO A LA ACCIÓN (DESTACADO)
    ========================================================================== */
 .hero-banner {
     display: flex;
@@ -172,6 +176,7 @@ header h1 {
     filter: brightness(0.85); 
 }
 
+/* Alineación de textos flotantes */
 .banner-text {
     position: absolute;
     top: 50%;
@@ -200,46 +205,86 @@ header h1 {
     text-align: right;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinea el título y el botón a la derecha */
+    align-items: flex-end;
 }
 
-/* Margen superior para separarlo del título */
 .hero-overlay {
-    margin-top: 15px;
+    margin-top: 18px;
     pointer-events: auto;
 }
 
+/* Botón Principal Elaborado (Sin cambiar la paleta) */
 .btn-primary {
-    display: inline-block;
-    background-color: #C7A167;
-    color: #FFF0F9;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    /* Fondo con degradado usando tu paleta */
+    background: linear-gradient(135deg, #C7A167 0%, #E0CEAA 100%);
+    color: #000000;
+    
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 12px 28px;
-    border-radius: 25px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 32px;
+    border-radius: 30px;
+    
+    /* Borde y Sombras con resplandor dorado */
+    border: 2px solid #FFF0F9;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 15px rgba(199, 161, 103, 0.4);
+    
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
 }
 
+/* Flecha decorativa dentro del botón */
+.btn-primary::after {
+    content: "➔";
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse (Hover) */
 .btn-primary:hover {
-    background-color: #000000;
-    transform: translateY(-3px);
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: #FFF0F9;
+    border-color: #C7A167;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(199, 161, 103, 0.6);
 }
 
-/* Responsivo */
+.btn-primary:hover::after {
+    transform: translateX(5px);
+}
+
+/* Efecto al hacer clic */
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Adaptación Responsive */
 @media (max-width: 900px) {
     .banner-text h2 {
         font-size: 1.4rem;
     }
-    
+
     .btn-primary {
-        padding: 8px 18px;
+        padding: 11px 24px;
         font-size: 0.85rem;
     }
 }
 
 @media (max-width: 600px) {
+    .banner-wrapper {
+        flex-direction: column;
+        background-color: #E0CEAA;
+    }
+
     .banner-text {
         position: static;
         transform: none;
@@ -250,33 +295,16 @@ header h1 {
     .text-right {
         align-items: center;
     }
-    
-    .banner-wrapper {
-        flex-direction: column;
-        background-color: #E0CEAA;
-    }
 
     .hero-overlay {
-        margin-top: 10px;
+        margin-top: 12px;
     }
 }
 
-.btn-primary {
-    display: inline-block;
-    background-color: #C7A167;
-    color: #FFF0F9;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 14px 32px;
-    border-radius: 25px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.btn-primary:hover {
-    background-color: #000000;
-    transform: translateY(-3px);
+@keyframes pulso-boton {
+    0% { box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(230, 184, 0, 0.7); }
+    70% { box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 0 12px rgba(230, 184, 0, 0); }
+    100% { box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(230, 184, 0, 0); }
 }
 
 .intro-card {
@@ -302,6 +330,9 @@ header h1 {
     color: #333333;
 }
 
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 footer {
     background-color: #E0CEAA;
     color: #000000;
@@ -347,41 +378,257 @@ footer {
     padding-top: 10px;
 }
 
+/* ==========================================================================
+   COMPONENTES EXTRAS (BOTÓN MODO & VOLVER ARRIBA)
+   ========================================================================== */
+.btn-theme-toggle {
+    background-color: transparent;
+    border: 1.5px solid #C7A167;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: rgba(199, 161, 103, 0.2);
+}
+
+.btn-back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #C7A167;
+    color: #FFF0F9;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.btn-back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-back-to-top:hover {
+    background-color: #000000;
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   RESPONSIVE & HAMBURGUESA
+   ========================================================================== */
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: #000000;
+    cursor: pointer;
+    padding: 5px;
+}
+
+@media (max-width: 900px) {
+    .banner-text h2 { font-size: 1.4rem; }
+}
+
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-        gap: 15px;
+        flex-direction: row;
+        height: 80px;
+        padding: 0 20px;
     }
 
-    #menu {
-        flex-direction: column;
-        width: 100%;
-    }
+    .hamburger-btn { display: block; }
 
     .nav-links {
+        display: none;
         flex-direction: column;
         width: 100%;
-        gap: 5px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #E0CEAA;
+        padding: 20px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 99;
+    }
+
+    .nav-links.active { display: flex; }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
     }
 
     .submenu {
         position: static;
         box-shadow: none;
         border: none;
-        background-color: transparent;
-        padding-left: 20px;
+        background-color: rgba(199, 161, 103, 0.2);
     }
+
+    #buscador { display: none; }
 
     footer {
         flex-direction: column;
         text-align: center;
     }
 
-    .footer-credits {
+    .footer-credits { text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .banner-text {
+        position: static;
+        transform: none;
         text-align: center;
+        padding: 10px 0;
+    }
+    
+    .text-right { align-items: center; }
+    
+    .banner-wrapper {
+        flex-direction: column;
+        background-color: #E0CEAA;
     }
 }
 
+/* ==========================================================================
+   CORRECCIÓN COMPLETA DE MODO NOCHE (DARK MODE)
+   ========================================================================== */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #E0E0E0 !important;
+}
+
+/* Header & Navegación en Dark Mode */
+body.dark-mode header {
+    background-color: #1E1E1E !important;
+    border-bottom: 2px solid #C7A167;
+}
+
+body.dark-mode header h1,
+body.dark-mode .logo-container h1 {
+    color: #FFF0F9 !important;
+}
+
+body.dark-mode .nav-links {
+    background-color: #1E1E1E !important;
+}
+
+body.dark-mode .nav-links a {
+    color: #E0E0E0 !important;
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
+    color: #C7A167 !important;
+    background-color: rgba(199, 161, 103, 0.2) !important;
+}
+
+body.dark-mode .submenu {
+    background-color: #2A2A2A !important;
+    border-color: #C7A167 !important;
+}
+
+body.dark-mode .submenu li a {
+    color: #E0E0E0 !important;
+}
+
+body.dark-mode .submenu li a:hover {
+    background-color: #C7A167 !important;
+    color: #000000 !important;
+}
+
+body.dark-mode .hamburger-btn {
+    color: #FFF0F9 !important;
+}
+
+/* Títulos Globales en Dark Mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode .section-title,
+body.dark-mode .subsection-title,
+body.dark-mode .card-content h3,
+body.dark-mode .contact-info-card h3,
+body.dark-mode .founder-info h4,
+body.dark-mode .staff-header h4 {
+    color: #FFF0F9 !important;
+}
+
+/* Textos y Párrafos en Dark Mode */
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode .contact-subtitle,
+body.dark-mode .gallery-subtitle,
+body.dark-mode .info-intro,
+body.dark-mode .info-item p,
+body.dark-mode .info-item strong,
+body.dark-mode .intro-card p,
+body.dark-mode .card-content p,
+body.dark-mode .history-card p,
+body.dark-mode .mv-card p,
+body.dark-mode .value-card p,
+body.dark-mode .founder-info p,
+body.dark-mode .staff-card p,
+body.dark-mode .intro-lead {
+    color: #E0E0E0 !important;
+}
+
+/* Tarjetas y Contenedores en Dark Mode */
+body.dark-mode .intro-card,
+body.dark-mode .service-card,
+body.dark-mode .staff-card,
+body.dark-mode .value-card,
+body.dark-mode .founder-card,
+body.dark-mode .contact-form-card,
+body.dark-mode .history-card {
+    background-color: #1E1E1E !important;
+    border-color: #C7A167 !important;
+}
+
+body.dark-mode .contact-info-card,
+body.dark-mode .mv-card {
+    background-color: #2A2A2A !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #2A2A2A !important;
+    color: #FFFFFF !important;
+    border-color: #C7A167 !important;
+}
+
+/* Footer en Dark Mode */
+body.dark-mode footer {
+    background-color: #1E1E1E !important;
+    border-color: #C7A167 !important;
+}
+
+body.dark-mode .footer-info p,
+body.dark-mode .footer-credits,
+body.dark-mode .footer-credits p {
+    color: #E0E0E0 !important;
+    border-color: rgba(199, 161, 103, 0.3) !important;
+}
 

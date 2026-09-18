@@ -29,11 +29,14 @@
             </ul>
 
             <div id="buscador">
-                <form action="https://google.com.co" method="get">
+                <form id="form-buscador">
                     <label for="input-busqueda" class="sr-only">Buscar</label>
-                    <input id="input-busqueda" name="busqueda" type="text" placeholder="Buscar...">
+                    <input id="input-busqueda" name="busqueda" type="text" placeholder="Buscar..." required>
                 </form>
             </div>
+             <button id="btn-theme" class="btn-theme-toggle" aria-label="Cambiar modo">
+                <span id="theme-icon">🌙</span>
+            </button>
         </nav>
     </header>
 
@@ -81,6 +84,13 @@
         </div>
     </footer>
 
+    <button id="btn-back-to-top" class="btn-back-to-top" aria-label="Volver arriba">
+        ↑
+    </button>
     <script src="js/Carrusel.js"></script>
+    <script src="js/script.js"></script>
+
+    
+
 </body>
 </html>

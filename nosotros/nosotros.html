@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Encabezado Principal -->
     <header>
         <div class="logo-container">
             <img src="../img/Logo.png" alt="Logo MonfiTop" class="img-logo">
@@ -30,11 +29,14 @@
             </ul>
 
             <div id="buscador">
-                <form action="https://google.com.co" method="get">
+                <form id="form-buscador">
                     <label for="input-busqueda" class="sr-only">Buscar</label>
-                    <input id="input-busqueda" name="busqueda" type="text" placeholder="Buscar...">
+                    <input id="input-busqueda" name="busqueda" type="text" placeholder="Buscar..." required>
                 </form>
             </div>
+             <button id="btn-theme" class="btn-theme-toggle" aria-label="Cambiar modo">
+                <span id="theme-icon">🌙</span>
+            </button>
         </nav>
     </header>
 
@@ -118,6 +120,11 @@
             <p>Autores: Nicolas Montoya Castro y Santiago Fonseca Ramirez</p>
         </div>
     </footer>
+    <button id="btn-back-to-top" class="btn-back-to-top" aria-label="Volver arriba">
+        ↑
+    </button>
+    <script src="../js/script.js"></script>
+
 
 </body>
 </html>

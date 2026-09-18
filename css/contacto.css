@@ -1,3 +1,6 @@
+/* ==========================================================================
+   SECCIÓN CONTACTO (CONTACTO.CSS)
+   ========================================================================== */
 
 .contact-container {
     max-width: 1100px;
@@ -22,6 +25,7 @@
     align-items: start;
 }
 
+/* Tarjeta Lateral de Información */
 .contact-info-card {
     background-color: #E0CEAA;
     padding: 35px 30px;
@@ -57,6 +61,7 @@
     font-size: 0.95rem;
 }
 
+/* Tarjeta del Formulario */
 .contact-form-card {
     background-color: #FFF0F9;
     padding: 35px 30px;
@@ -107,12 +112,11 @@
    ========================================================================== */
 .form-buttons {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* "Limpiar" más pequeño, "Enviar" más ancho */
+    grid-template-columns: 1fr 2fr;
     gap: 15px;
     margin-top: 10px;
 }
 
-/* Estilo base para ambos botones */
 .btn-reset,
 .btn-submit {
     padding: 12px;
@@ -145,16 +149,71 @@
 
 .btn-submit:hover {
     background-color: #000000;
+    color: #FFF0F9;
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsivo para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .form-buttons {
-        grid-template-columns: 1fr; /* Se apilan en vertical en celulares */
+#estado {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN MODO NOCHE (DARK MODE)
+   ========================================================================== */
+body.dark-mode .contact-subtitle,
+body.dark-mode .info-intro,
+body.dark-mode .info-item p {
+    color: #CCCCCC !important;
+}
+
+body.dark-mode .contact-info-card {
+    background-color: #2A2A2A !important;
+    border: 1px solid #C7A167;
+}
+
+body.dark-mode .contact-info-card h3,
+body.dark-mode .info-item strong,
+body.dark-mode .form-group label {
+    color: #FFF0F9 !important;
+}
+
+body.dark-mode .contact-form-card {
+    background-color: #1E1E1E !important;
+    border-color: #C7A167 !important;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background-color: #2A2A2A !important;
+    color: #FFFFFF !important;
+    border-color: #C7A167 !important;
+}
+
+body.dark-mode .btn-reset {
+    color: #E0E0E0 !important;
+    border-color: #C7A167 !important;
+}
+
+body.dark-mode .btn-reset:hover {
+    background-color: rgba(199, 161, 103, 0.2) !important;
+    color: #FFF0F9 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
     }
 }
 
-
-
+@media (max-width: 480px) {
+    .form-buttons {
+        grid-template-columns: 1fr;
+    }
+}
